@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dailyWeatherCell" id="gTV-IL-0wX" customClass="WeatherCollectionViewCell" customModule="WeatherApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="75" height="116"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="75" height="116"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nuz-vI-Dfl" customClass="MisDesignView" customModule="WeatherApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="75" height="116"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fLX-N4-AwO">
+                                <rect key="frame" x="8" y="30.5" width="59" height="48"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKF-BS-aU4">
+                                <rect key="frame" x="14" y="86.5" width="47" height="21.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Nf0-zH-GHN">
+                                <rect key="frame" x="8" y="8" width="59" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1529411765" green="0.69803921570000005" blue="0.74509803919999995" alpha="0.25" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nf0-zH-GHN" firstAttribute="leading" secondItem="Nuz-vI-Dfl" secondAttribute="leading" constant="8" id="5Rg-KV-qkF"/>
+                            <constraint firstAttribute="trailing" secondItem="fLX-N4-AwO" secondAttribute="trailing" constant="8" id="5eQ-BE-pZs"/>
+                            <constraint firstItem="Nf0-zH-GHN" firstAttribute="top" secondItem="Nuz-vI-Dfl" secondAttribute="top" constant="8" id="EDn-WB-Z0N"/>
+                            <constraint firstAttribute="bottom" secondItem="CKF-BS-aU4" secondAttribute="bottom" constant="8" id="P8a-Aq-UeU"/>
+                            <constraint firstItem="fLX-N4-AwO" firstAttribute="leading" secondItem="Nuz-vI-Dfl" secondAttribute="leading" constant="8" id="V4L-pd-hQ5"/>
+                            <constraint firstItem="Nf0-zH-GHN" firstAttribute="centerX" secondItem="Nuz-vI-Dfl" secondAttribute="centerX" id="m7H-Ii-TeF"/>
+                            <constraint firstItem="fLX-N4-AwO" firstAttribute="top" secondItem="Nf0-zH-GHN" secondAttribute="bottom" constant="8" id="oBu-qY-j6r"/>
+                            <constraint firstAttribute="trailing" secondItem="Nf0-zH-GHN" secondAttribute="trailing" constant="8" id="q4u-0G-p64"/>
+                            <constraint firstItem="CKF-BS-aU4" firstAttribute="top" secondItem="fLX-N4-AwO" secondAttribute="bottom" constant="8" symbolic="YES" id="qHb-4w-9MG"/>
+                            <constraint firstItem="fLX-N4-AwO" firstAttribute="centerX" secondItem="Nuz-vI-Dfl" secondAttribute="centerX" id="qx6-jn-n2O"/>
+                            <constraint firstItem="CKF-BS-aU4" firstAttribute="centerX" secondItem="Nuz-vI-Dfl" secondAttribute="centerX" id="zks-rK-ppg"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="4"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                <size key="value" width="1" height="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" systemColor="systemGray4Color"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Nuz-vI-Dfl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GvD-oE-FcE"/>
+                <constraint firstAttribute="bottom" secondItem="Nuz-vI-Dfl" secondAttribute="bottom" id="Na6-0p-72F"/>
+                <constraint firstItem="Nuz-vI-Dfl" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Nfd-XT-dhb"/>
+                <constraint firstAttribute="trailing" secondItem="Nuz-vI-Dfl" secondAttribute="trailing" id="w1U-x2-0ph"/>
+            </constraints>
+            <size key="customSize" width="75" height="116"/>
+            <connections>
+                <outlet property="dayLabel" destination="Nf0-zH-GHN" id="xYV-MO-RBL"/>
+                <outlet property="tempLabel" destination="CKF-BS-aU4" id="FaA-q4-mZU"/>
+                <outlet property="weatherImageView" destination="fLX-N4-AwO" id="XlQ-8V-oLX"/>
+            </connections>
+            <point key="canvasLocation" x="290.57971014492756" y="5.3571428571428568"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

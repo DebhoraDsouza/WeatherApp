@@ -62,11 +62,11 @@ class WeatherViewController: BaseViewController {
     private func setUpCollectionView(){
         self.weatherCollectionView.register(UINib(nibName:WeatherCollectionViewCell.nibName, bundle: nil), forCellWithReuseIdentifier: WeatherCollectionViewCell.reuseIdentifier)
         self.weatherCollectionView.register( SingleCollectionReusableView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier:SingleCollectionReusableView.identifier)
-//        weatherCollectionView.semanticContentAttribute = .forceLeftToRight
         self.weatherCollectionView.dataSource = self.weatherViewModel
         self.weatherCollectionView.delegate = self.weatherViewModel
         
         let margin: CGFloat = 24
+
 
         if let flowLayout = self.weatherCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
             

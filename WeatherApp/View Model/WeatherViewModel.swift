@@ -86,8 +86,8 @@ class WeatherViewModel: NSObject, UICollectionViewDelegate, UICollectionViewData
                 + (flowLayout.minimumInteritemSpacing * CGFloat(noOfCellsInRow + 1) )
 
             let size = Int((collectionView.bounds.width - totalSpace) / CGFloat(noOfCellsInRow))
-
             return CGSize(width: size, height:116)
+
         }else{
             return .zero
         }

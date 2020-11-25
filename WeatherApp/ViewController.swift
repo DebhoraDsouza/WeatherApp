@@ -50,6 +50,7 @@ class ViewController: BaseViewController {
     
     @IBAction func useTouchIDTapped(_ sender: Any) {
         self.loginViewModel.authenticateUser()
+
     }
 
 

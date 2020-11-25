@@ -104,7 +104,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate{
         } else {
           print("\(error.localizedDescription)")
             error.createError()
-
         }
         return
       }

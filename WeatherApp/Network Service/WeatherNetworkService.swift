@@ -18,6 +18,7 @@ class WeatherNetworkService: NSObject {
      private var mDisposableBag: DisposeBag  = DisposeBag()
     private var errorHelper=ErrorHelper()
 
+
     func getWeatherDetails(url: String, completion: @escaping ([daily]?, ErrorModel?) -> ()){
         
         let observable = APIManager().getResponseFromServer(url: url, requestMethod: .get, httpBody: nil).observeOn(MainScheduler.instance).subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))

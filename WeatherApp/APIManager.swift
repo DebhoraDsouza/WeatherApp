@@ -13,6 +13,7 @@ class APIManager: SessionDelegate {
 
     var sessionManager: SessionManager?
     var errorHelper = ErrorHelper()
+
     
       override init(){
             super.init()
@@ -28,6 +29,7 @@ class APIManager: SessionDelegate {
         return Observable<Data>.create { observer in
             
             let request = self.getUrlRequestObject(url: url, httpMethod: requestMethod, headers: GlobalHelper().headers(), httpBody: httpBody)
+
             
             let alamofireRequest = self.sessionManager?.request(request).responseJSON(completionHandler: { response in
                 switch response.result {
@@ -47,6 +49,7 @@ class APIManager: SessionDelegate {
                         observer.onCompleted()
                     }else{
                         observer.onError(self.errorHelper.getServerError(error: response.result.value as AnyObject))
+
                     }
                     
                     break

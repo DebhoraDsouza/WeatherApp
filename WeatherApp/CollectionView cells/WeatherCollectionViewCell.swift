@@ -51,6 +51,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         weatherImageView.cancelImageLoad()
     }
 
+
     
     
     class var reuseIdentifier: String {
@@ -59,7 +60,6 @@ class WeatherCollectionViewCell: UICollectionViewCell {
      class var nibName: String {
          return "WeatherCollectionViewCell"
      }
-    
 
 
 }

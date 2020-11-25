@@ -7,14 +7,20 @@
 
 import UIKit
 import CoreData
+import GoogleSignIn
+import Highcharts
+
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate,GIDSignInDelegate{
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        GIDSignIn.sharedInstance().clientID = "222872254290-u79kpiicguhudc3u8m644tv89eg747k7.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance()?.delegate = self
+        HIChartView.preload()
+
         return true
     }
 
@@ -75,6 +81,56 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func application(_ application: UIApplication,
+                     open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+      return GIDSignIn.sharedInstance().handle(url)
+    }
+    
+    @available(iOS 9.0, *)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+      return GIDSignIn.sharedInstance().handle(url)
+    }
+    
+
+    
+    /* Google sign in */
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+       if let error = error {
+        if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+          print("The user has not signed in before or they have since signed out.")
+        } else {
+          print("\(error.localizedDescription)")
+            error.createError()
+
+        }
+        return
+      }
+      // Perform any operations on signed in user here.
+        self.showSearchRegionVC()
+ 
+    }
+    
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+      // Perform any operations when the user disconnects from app here.
+      // ...
+    }
+    
+    /* Show next view controller after sign in*/
+    private func showSearchRegionVC(){
+        
+        let controller = SearchViewController(nibName: "SearchViewController", bundle: nil)
+        let window = UIApplication.shared.windows.first
+         var vc = window?.rootViewController as? UINavigationController
+            if vc == nil{
+                vc = UINavigationController ()
+            }
+        vc?.setViewControllers([controller], animated: true)
+        window?.rootViewController = vc
     }
 
 }

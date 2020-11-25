@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoaderView" customModule="MoveInSync" customModuleProvider="target">
+            <connections>
+                <outlet property="mActivityIndicator" destination="yH4-ul-KVR" id="BLa-Ij-dF4"/>
+                <outlet property="mContainerView" destination="iN0-l3-epB" id="cgE-bp-IAl"/>
+                <outlet property="mLabel" destination="rnm-fy-jv9" id="0Km-OC-NKv"/>
+                <outlet property="mMainView" destination="Y98-CG-Xu2" id="0u1-2T-7ap"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="368" height="479"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y98-CG-Xu2" customClass="MisDesignView" customModule="MoveInSync" customModuleProvider="target">
+                    <rect key="frame" x="112" y="234" width="144" height="55"/>
+                    <subviews>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yH4-ul-KVR">
+                            <rect key="frame" x="10" y="15" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="SGP-cL-UF6"/>
+                                <constraint firstAttribute="width" constant="25" id="zNJ-GM-wXn"/>
+                            </constraints>
+                            <color key="color" red="0.23921568630000001" green="0.68235294120000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Wait..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnm-fy-jv9">
+                            <rect key="frame" x="47" y="19" width="87" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="rnm-fy-jv9" firstAttribute="centerY" secondItem="Y98-CG-Xu2" secondAttribute="centerY" id="OoE-Q9-XRB"/>
+                        <constraint firstItem="rnm-fy-jv9" firstAttribute="leading" secondItem="yH4-ul-KVR" secondAttribute="trailing" constant="12" id="SiK-6q-nCb"/>
+                        <constraint firstAttribute="height" constant="55" id="aOU-hI-pQ1"/>
+                        <constraint firstAttribute="trailing" secondItem="rnm-fy-jv9" secondAttribute="trailing" constant="10" id="pFM-Q7-74c"/>
+                        <constraint firstItem="yH4-ul-KVR" firstAttribute="centerY" secondItem="Y98-CG-Xu2" secondAttribute="centerY" id="paJ-h0-6Sh"/>
+                        <constraint firstItem="yH4-ul-KVR" firstAttribute="leading" secondItem="Y98-CG-Xu2" secondAttribute="leading" constant="10" id="xmJ-ac-wDP"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="maskBounds" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Y98-CG-Xu2" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="glP-cC-K0r"/>
+                <constraint firstItem="Y98-CG-Xu2" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="hmy-lQ-tm1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="159.42028985507247" y="65.959821428571431"/>
+        </view>
+    </objects>
+</document>
